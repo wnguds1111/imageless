@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초간단 이미지 압축기 🚀</title>
+    
+    <meta name="description" content="API 없이 브라우저에서 바로 이미지를 압축하세요. JPG, PNG, WebP 파일 용량을 효과적으로 줄일 수 있습니다. 고품질, 중품질, 저품질 선택 가능.">
+    <meta name="keywords" content="이미지 용량 줄이기, jpg 압축, png 압축, 이미지 압축, browser-image-compression, 웹사이트 이미지, 파일 사이즈 줄이기">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+</head>
+<body>
+
+    <div class="main-background">
+        <div class="card-container">
+            <h1 class="main-title">초간단 이미지 압축기 🚀</h1>
+            <p class="subtitle">API 서버 없이, 당신의 브라우저에서 바로 압축합니다!<br>빠르고 안전하게 이미지 용량을 줄이세요.</p>
+
+            <div class="upload-area">
+                <label for="image-file" class="upload-label">
+                    <span>📂 이미지 파일 선택</span>
+                    <p id="file-name">여기를 클릭하거나 파일을 드래그하세요</p>
+                    <p class="format-info">지원 포맷: JPG, PNG, WebP, BMP</p>
+                </label>
+                <input type="file" id="image-file" accept="image/jpeg, image/png, image/webp, image/bmp" hidden>
+            </div>
+
+            <div class="options-area">
+                <h2>압축 품질 선택</h2>
+                <div class="options-group">
+                    <label>
+                        <input type="radio" name="quality" value="0.9" checked>
+                        <strong>최고화질 (90%)</strong>
+                        <span>(추천) - 원본 품질을 거의 유지하며 용량을 최적화합니다.</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="quality" value="0.7">
+                        <strong>고화질 (70%)</strong>
+                        <span>웹사이트, 블로그 업로드에 적합하며 용량을 효과적으로 줄입니다.</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="quality" value="0.5">
+                        <strong>중화질 (50%)</strong>
+                        <span>용량과 품질의 균형을 맞춥니다.</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="quality" value="0.3">
+                        <strong>저화질 (30%)</strong>
+                        <span>채팅방 전송 등, 용량이 가장 중요할 때 사용합니다.</span>
+                    </label>
+                </div>
+            </div>
+
+            <button id="compress-button" disabled>압축 시작하기</button>
+            
+            <div id="progress-bar-container" class="hidden">
+                <div id="progress-bar"></div>
+                <p id="progress-text">압축 진행 중: 0%</p>
+            </div>
+
+            <div id="result-area" class="hidden">
+                <h2>🎉 압축 완료!</h2>
+                <div class="result-info">
+                    <p><strong>원본:</strong> <span id="original-size"></span> KB</p>
+                    <p><strong>압축본:</strong> <span id="compressed-size"></span> KB</p>
+                    <p class="save-rate">약 <strong id="save-rate"></strong>% 절약!</p>
+                </div>
+                <a id="download-link" class="download-button" download="compressed-image.jpg">
+                    압축 이미지 다운로드
+                </a>
+            </div>
+            
+            <div class="ads-banner coupang-area">
+                <p style="font-size: 11px; color: #777; margin-bottom: 5px;">
+                    "압축한 고용량 원본 파일, 안전하게 백업하세요! (쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있습니다)"
+                </p>
+                <a href="https://link.coupang.com/a/bM1s1" target="_blank">
+                    <img src="https://via.placeholder.com/468x60.png?text=고용량+외장하드+할인+바로가기" alt="외장하드 배너" style="max-width: 100%; height: auto; border-radius: 8px;">
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
