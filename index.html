@@ -5,28 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>빠른 이미지 압축기 🚀</title>
     
-    <meta name="description" content="세상에서 제일 빠르고 안전하게 이미지 용량을 줄이세요. API 없이 브라우저에서 바로 JPG, PNG, WebP, BMP 파일 용량을 효과적으로 압축합니다. 고품질, 중품질, 저품질 선택 가능.">
-    <meta name="keywords" content="이미지 용량 줄이기, jpg 압축, png 압축, 이미지 압축, browser-image-compression, 웹사이트 이미지, 파일 사이즈 줄이기, 빠른 이미지 압축, 여러 개 이미지 압축">
+    <meta name="description" content="세상에서 제일 빠르고 안전하게 이미지 용량을 줄이세요. JPG, PNG, WebP 파일 용량을 효과적으로 줄일 수 있습니다. 고품질, 중품질, 저품질 선택 가능.">
+    <meta name="keywords" content="이미지 용량 줄이기, jpg 압축, png 압축, 이미지 압축, browser-image-compression, 웹사이트 이미지, 파일 사이즈 줄이기">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 <body>
 
     <div class="main-background">
         <div class="card-container">
             <h1 class="main-title">빠른 이미지 압축기 🚀</h1>
-            <p class="subtitle">세상에서 제일 빠르고 안전하게 이미지 용량을 줄이세요.<br>여러 파일을 한 번에 압축할 수 있습니다.</p>
+            <p class="subtitle">세상에서 제일 빠르고 안전하게 이미지 용량을 줄이세요.</p>
 
             <div class="upload-area">
                 <label for="image-file" class="upload-label">
                     <span>📂 이미지 파일 선택</span>
-                    <p id="file-name">여기를 클릭하거나 파일을 드래그하세요 (여러 파일 가능)</p>
+                    <p id="file-name">여기를 클릭하거나 파일을 드래그하세요</p>
                     <p class="format-info">지원 포맷: JPG, PNG, WebP, BMP</p>
                 </label>
-               <input type="file" id="image-file" accept="image/jpeg, image/png, image/webp, image/bmp" multiple hidden>
+                <input type="file" id="image-file" accept="image/jpeg, image/png, image/webp, image/bmp" multiple hidden>
             </div>
 
             <div class="options-area">
@@ -62,28 +63,28 @@
                 <p id="progress-text">압축 진행 중: 0%</p>
             </div>
 
-        <div id="result-area" class="hidden">
-            <h2>🎉 압축 완료!</h2>
-            <div class="result-info">
+            <div id="result-area" class="hidden">
+                <h2>🎉 압축 완료!</h2>
+                <div class="result-info">
+                    <p><strong>원본:</strong> <span id="original-size">0</span> KB</p>
+                    <p><strong>압축본:</strong> <span id="compressed-size">0</span> KB</p>
+                    <p class="save-rate">약 <strong id="save-rate">0</strong>% 절약!</p>
                 </div>
+                <a id="download-link" class="download-button" download="compressed-image.jpg">
+                    압축 이미지 다운로드
+                </a>
+            </div>
             
-            <a id="download-link" class="download-button" download="compressed-image.jpg">
-                압축 이미지 다운로드
-            </a>
-            
-        </div>
-            
-           <div class="ads-banner coupang-area">
-            <p style="font-size: 11px; color: #777; margin-bottom: 10px;">
-                "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
-            </p>
-            <iframe src="https://ads-partners.coupang.com/widgets.html?id=941316&template=carousel&trackingCode=AF1351548&subId=&width=680&height=140&tsource=" width="680" height="140" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
-        </div>
+            <div class="ads-banner coupang-area">
+                <p style="font-size: 11px; color: #777; margin-bottom: 10px;">
+                    "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
+                </p>
+                <iframe src="https://ads-partners.coupang.com/widgets.html?id=941316&template=carousel&trackingCode=AF1351548&subId=&width=680&height=140&tsource=" width="680" height="140" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
+            </div>
+
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
