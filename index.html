@@ -10,7 +10,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <link rel="stylesheet" href="style.css">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@
                     <p id="file-name">여기를 클릭하거나 파일을 드래그하세요 (여러 파일 가능)</p>
                     <p class="format-info">지원 포맷: JPG, PNG, WebP, BMP</p>
                 </label>
-                <input type="file" id="image-file" accept="image/jpeg,image/png,image/webp,image/bmp" multiple hidden>
+               <input type="file" id="image-file" accept="image/jpeg, image/png, image/webp, image/bmp" multiple hidden>
             </div>
 
             <div class="options-area">
@@ -71,11 +71,12 @@
                 </a>
             </div>
             
-            <div class="ads-banner coupang-area">
-                <p class="coupang-info-text">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
-                <iframe src="https://ads-partners.coupang.com/widgets.html?id=941316&template=carousel&trackingCode=AF1351548&subId=&width=680&height=140&tsource=" width="680" height="140" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
-            </div>
-
+           <div class="ads-banner coupang-area">
+            <p style="font-size: 11px; color: #777; margin-bottom: 10px;">
+                "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
+            </p>
+            <iframe src="https://ads-partners.coupang.com/widgets.html?id=941316&template=carousel&trackingCode=AF1351548&subId=&width=680&height=140&tsource=" width="680" height="140" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
+        </div>
         </div>
     </div>
 
