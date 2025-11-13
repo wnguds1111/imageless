@@ -1,0 +1,318 @@
+/* [파일 이름: style.css] */
+body {
+    font-family: "Pretendard", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 상단으로 정렬 */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* --- 메인 배경 그라데이션 (새롭게 추가) --- */
+.main-background {
+    background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%); /* 따뜻한 그라데이션 */
+    padding: 60px 20px 40px; /* 상단 여백 증가 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 상단으로 정렬 */
+    min-height: 100vh; /* 전체 높이 */
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* 부드러운 그림자 */
+    padding-bottom: 80px; /* 하단 여백 추가 */
+}
+
+.card-container {
+    max-width: 650px; /* 카드 최대 너비 확장 */
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 25px; /* 더 둥글게 */
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1); /* 더 깊은 그림자 */
+    padding: 40px 50px; /* 패딩 증가 */
+    text-align: center;
+    transform: translateY(0); /* 초기 위치 */
+    transition: transform 0.5s ease; /* 애니메이션 효과 */
+    animation: slideInFromTop 0.8s ease-out; /* 등장 애니메이션 */
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-title {
+    font-size: 42px; /* 제목 크기 키움 */
+    font-weight: 900;
+    color: #d35400; /* 깊은 오렌지색 */
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 35px; /* 여백 증가 */
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* --- 1. 업로드 영역 --- */
+.upload-area {
+    margin-bottom: 30px; /* 여백 증가 */
+}
+.upload-label {
+    display: block;
+    border: 3px dashed #e0e0e0; /* 더 두껍고 부드러운 테두리 */
+    border-radius: 18px; /* 더 둥글게 */
+    padding: 40px; /* 패딩 증가 */
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.upload-label:hover,
+.upload-label.dragover {
+    background-color: #fffaf0; /* 부드러운 호버 배경색 */
+    border-color: #ff9200; /* 주황색 강조 */
+    box-shadow: 0 0 0 4px rgba(255, 146, 0, 0.1); /* 부드러운 그림자 */
+}
+.upload-label span {
+    font-size: 24px; /* 아이콘/텍스트 크기 키움 */
+    font-weight: 700;
+    color: #ff9200;
+}
+.upload-label p {
+    margin: 8px 0 0 0;
+    color: #666;
+    font-size: 16px;
+}
+#file-name {
+    font-weight: 600;
+    color: #333;
+}
+.format-info {
+    font-size: 13px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* --- 2. 옵션 영역 --- */
+.options-area h2 {
+    font-size: 26px; /* 제목 크기 키움 */
+    margin-bottom: 20px;
+    text-align: left;
+    border-bottom: 2px solid #f0f0f0; /* 더 두꺼운 구분선 */
+    padding-bottom: 12px;
+    color: #333;
+    font-weight: 700;
+}
+.options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* 간격 증가 */
+    margin-bottom: 25px;
+}
+.options-group label {
+    display: flex;
+    align-items: center;
+    background-color: #fdfdfd; /* 거의 흰색 배경 */
+    border-radius: 12px;
+    padding: 18px; /* 패딩 증가 */
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+    border: 2px solid #eee; /* 기본 테두리 */
+}
+.options-group label:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    background-color: #ffffff;
+}
+.options-group input[type="radio"] {
+    margin-right: 18px; /* 마진 증가 */
+    transform: scale(1.4); /* 라디오 버튼 크기 키움 */
+    accent-color: #ff9200;
+}
+.options-group label strong {
+    font-size: 18px; /* 텍스트 크기 키움 */
+    color: #333;
+}
+.options-group label span {
+    font-size: 14px;
+    color: #777;
+    margin-left: 12px; /* 마진 증가 */
+}
+.options-group label.checked {
+    border-color: #ff9200; /* 선택 시 주황색 테두리 */
+    background-color: #fff8eb; /* 선택 시 배경색 */
+    box-shadow: 0 6px 20px rgba(255, 146, 0, 0.2);
+}
+
+/* --- 3. 버튼 --- */
+button, .download-button {
+    width: 100%;
+    padding: 18px; /* 패딩 증가 */
+    font-size: 20px; /* 폰트 크기 키움 */
+    font-weight: 700;
+    border: none;
+    border-radius: 15px; /* 더 둥글게 */
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    margin-top: 30px; /* 마진 증가 */
+    box-sizing: border-box;
+}
+#compress-button {
+    background-color: #ff9200;
+    color: white;
+    box-shadow: 0 6px 25px rgba(255, 146, 0, 0.35);
+}
+#compress-button:hover:not(:disabled) {
+    background-color: #e08000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 146, 0, 0.45);
+}
+#compress-button:disabled {
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* --- 로딩 프로그레스 바 (새롭게 추가) --- */
+#progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 25px; /* 높이 조정 */
+    margin-top: 25px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.08);
+}
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ffc700 0%, #ff9200 100%); /* 그라데이션 바 */
+    border-radius: 10px;
+    transition: width 0.1s ease-out; /* 부드러운 애니메이션 */
+}
+#progress-text {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #ff9200;
+    font-size: 16px;
+}
+
+/* --- 4. 결과 영역 --- */
+#result-area {
+    background-color: #f0fff8;
+    border: 1px solid #b8e9d3;
+    border-radius: 18px;
+    padding: 25px;
+    margin-top: 30px;
+    animation: fadeIn 0.5s ease;
+}
+#result-area h2 {
+    color: #008a4a;
+    margin-top: 0;
+    font-size: 28px;
+    font-weight: 800;
+}
+.result-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+.result-info p {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.result-info p strong {
+    font-size: 19px;
+    color: #333;
+}
+.result-info .save-rate {
+    font-size: 22px; /* 강조 */
+    font-weight: 700;
+}
+.result-info .save-rate strong {
+    color: #d35400;
+    font-size: 28px;
+}
+.download-button {
+    display: block;
+    text-decoration: none;
+    background-color: #2ecc71;
+    color: white;
+    box-shadow: 0 6px 25px rgba(46, 204, 113, 0.35);
+}
+.download-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-3px);
+}
+.hidden {
+    display: none;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 쿠팡 파트너스 배너 --- */
+.ads-banner {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #eee;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .main-background { padding: 40px 15px; }
+    .card-container { padding: 30px 30px; border-radius: 20px; }
+    .main-title { font-size: 36px; }
+    .subtitle { font-size: 16px; margin-bottom: 25px; }
+    .upload-label { padding: 30px; }
+    .upload-label span { font-size: 20px; }
+    .options-area h2 { font-size: 22px; }
+    .options-group label { padding: 15px; }
+    .options-group label strong { font-size: 16px; }
+    .options-group label span { font-size: 13px; margin-left: 8px; }
+    button, .download-button { padding: 15px; font-size: 18px; }
+    #result-area h2 { font-size: 24px; }
+    .result-info { flex-direction: column; gap: 15px; }
+    .result-info .save-rate strong { font-size: 24px; }
+}
+
+@media (max-width: 480px) {
+    .main-background { padding: 20px 10px; }
+    .card-container { padding: 20px 20px; border-radius: 15px; }
+    .main-title { font-size: 30px; }
+    .subtitle { font-size: 14px; margin-bottom: 20px; }
+    .upload-label { padding: 25px; }
+    .upload-label span { font-size: 18px; }
+    .options-area h2 { font-size: 20px; margin-bottom: 15px; }
+    .options-group label { flex-direction: column; align-items: flex-start; padding: 12px; }
+    .options-group label strong { font-size: 15px; }
+    .options-group label span { margin-left: 0; margin-top: 5px; font-size: 12px; }
+    .options-group input[type="radio"] { margin-right: 12px; transform: scale(1.2); }
+    button, .download-button { padding: 12px; font-size: 16px; border-radius: 12px; margin-top: 20px; }
+    #result-area h2 { font-size: 20px; }
+    .result-info .save-rate strong { font-size: 20px; }
+    #progress-bar-container { height: 20px; margin-top: 20px;}
+    #progress-text { font-size: 14px; margin-top: 8px;}
+    .ads-banner { margin-top: 30px; padding-top: 15px;}
+}
