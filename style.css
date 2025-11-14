@@ -321,3 +321,60 @@ button, .download-button {
     #progress-text { font-size: 14px; margin-top: 8px;}
     .ads-banner { margin-top: 30px; padding-top: 15px;}
 }
+/* style.css (용량 줄이기 사이트)에 추가 */
+
+/* --- [새로 추가] PDF 변환기 프로모션 배너 (파란색 테마) --- */
+.promo-banner-blue {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* 파란색 톤의 연한 배경 */
+    background: linear-gradient(90deg, #F0F4FC, #E6F0FF);
+    padding: 18px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: var(--text-dark, #333333);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 20px;
+    border: 1px solid #D6E3FE; /* 연한 파란색 테두리 */
+}
+
+.promo-banner-blue:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.promo-banner-blue .banner-icon {
+    font-size: 28px;
+    color: var(--primary-color, #6A8EFE); /* 메인 파란색 아이콘 */
+    background-color: white;
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.promo-banner-blue .banner-content {
+    flex-grow: 1;
+}
+
+.promo-banner-blue .banner-content h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--primary-color, #6A8EFE); /* 메인 파란색 제목 */
+    font-weight: 600;
+}
+
+.promo-banner-blue .banner-content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: var(--text-light, #6B7280);
+}
+
+.promo-banner-blue .banner-arrow i {
+    font-size: 20px;
+    color: var(--text-lighter, #9CA3AF);
+}
