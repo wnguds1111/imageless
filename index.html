@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <script>
+      (function() {
+        // 1. 브라우저의 언어 설정을 가져옵니다 (예: 'ko-KR', 'en-US')
+        var userLang = navigator.language || navigator.userLanguage; 
+        
+        // 2. 현재 경로가 '/en'이 아닌지 확인합니다 (무한 루프 방지)
+        var currentPath = window.location.pathname;
+        
+        // 3. 언어가 'ko' (한국어)로 시작하지 않고,
+        //    이미 '/en/' 페이지에 있는 것도 아니라면
+        if (!userLang.startsWith('ko') && !currentPath.includes('/en/')) {
+          
+          // 4. 영어 버전(/en/)으로 즉시 리디렉션합니다.
+          //    (경로에 'index.html'을 포함해야 정확히 이동합니다)
+          window.location.replace('/en/index.html');
+        }
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>빠른 이미지 압축기 🚀</title> <link rel="alternate" hreflang="ko-kr" href="https://imageless-pink.vercel.app/ko">
