@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Image Compressor 🚀</title> <meta name="description" content="The fastest and safest way to reduce image size. Compress JPG, PNG, WebP files effectively. High, Medium, Low quality options available.">
+    <meta name="keywords" content="image compressor, reduce image size, jpg compress, png compress, browser-image-compression, optimize image">
+    
+    <link rel="alternate" hreflang="ko-kr" href="https://imageless-pink.vercel.app/ko">
+    <link rel="alternate" hreflang="en" href="https://imageless-pink.vercel.app/en">
+    <link rel="alternate" hreflang="x-default" href="https://imageless-pink.vercel.app/en">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <link rel="stylesheet" href="style.css"> <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+
+    <div class="main-background">
+        <div class="card-container">
+            <h1 class="main-title">Fast Image Compressor 🚀</h1>
+            <p class="subtitle">The fastest and safest way to reduce image size.<br>Compress images instantly in your browser.</p>
+
+            <div class="upload-area">
+                <label for="image-file" class="upload-label">
+                    <span>📂 Select Image Files</span>
+                    <p id="file-name">Click here or drag files to upload</p>
+                    <p class="format-info">Supported Formats: JPG, PNG, WebP, BMP</p>
+                </label>
+                <input type="file" id="image-file" accept="image/jpeg, image/png, image/webp, image/bmp" multiple hidden>
+            </div>
+
+            <div class="options-area">
+                <h2>Select Compression Quality</h2>
+                <div class="options-group">
+                    <label>
+                        <input type="radio" name="quality" value="0.9" checked>
+                        <strong>Highest (90%)</strong>
+                        <span>(Recommended) Optimizes size while keeping original quality.</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="quality" value="0.7">
+                        <strong>High (70%)</strong>
+                        <span>Great for websites and blogs, effectively reduces size.</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="quality" value="0.5">
+                        <strong>Medium (50%)</strong>
+                        <span>A good balance between file size and quality.</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="quality" value="0.3">
+                        <strong>Low (30%)</strong>
+                        <span>Use when file size is the top priority (e.g., chat).</span>
+                    </label>
+                </div>
+            </div>
+
+            <button id="compress-button" disabled>Start Compression</button>
+            
+            <div id="progress-bar-container" class="hidden">
+                <div id="progress-bar"></div>
+                <p id="progress-text">Compressing: 0%</p>
+            </div>
+
+            <div id="result-area" class="hidden">
+                <h2>🎉 Compression Complete!</h2>
+                <div class="result-info">
+                    <p><strong>Original:</strong> <span id="original-size">0</span> KB</p>
+                    <p><strong>Compressed:</strong> <span id="compressed-size">0</span> KB</p>
+                    <p class="save-rate">Saved ~<strong id="save-rate">0</strong>%!</p>
+                </div>
+                <a id="download-link" class="download-button" download="compressed-image.jpg">
+                    Download Compressed Image
+                </a>
+            </div>
+            
+            <div class="ads-banner coupang-area">
+                <p style="font-size: 11px; color: #777; margin-bottom: 10px;">
+                    "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
+                </p>
+                <iframe src="https://ads-partners.coupang.com/widgets.html?id=941316&template=carousel&trackingCode=AF1351548&subId=&width=680&height=140&tsource=" width="680" height="140" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script> </body>
+</html>
